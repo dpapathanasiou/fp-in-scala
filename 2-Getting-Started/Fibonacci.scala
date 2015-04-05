@@ -1,10 +1,14 @@
 
 object Fibonacci {
   def fib(n: Int): Int = {
-    // this is a simple, declarative function
-    // (it works, but is not tail-recursive)
-    if (0 == n || 1 == n) n
-    else fib(n-2) + fib(n-1)
+    @annotation.tailrec
+    def calc(n: Int, pr: Int, nx: Int): Int = {
+      if (0 == n) pr
+      else calc(n-1, nx, pr+nx)
+    }
+    // using tail-recursive local fn:
+    // pr=prior, nx=next fibonacci numbers
+    calc(n, 0, 1)
   }
 
   def main(args: Array[String]): Unit = {
