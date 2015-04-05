@@ -5,13 +5,13 @@ object Sorted {
   private def intAsc (a: Int, b: Int): Boolean = (a <= b)
 
   def isSorted[A](as: Array[A], ordered: (A, A) => Boolean): Boolean = {
+    @annotation.tailrec
     def checkAtIndex(n: Int): Boolean = {
-      if (n >= as.length) false
-      else if ( (n+1) >= as.length ) true
-      else ordered(as(n), as(n+1))
+      if ((n+1) >= as.length) true // got all the way through array w/o unordered pairs
+      else if (! ordered(as(n), as(n+1))) false // found an unordered pair, so stop
+      else checkAtIndex(n+1)
     }
-    // return false if even a single pair is out of sequence
-    ! as.indices.map(checkAtIndex).contains(false)
+    checkAtIndex(0)
   }
 
   def main(args: Array[String]): Unit = {
