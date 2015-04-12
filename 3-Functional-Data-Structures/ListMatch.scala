@@ -3,8 +3,7 @@ import MyList._
 object ListMatch {
 
   def main(args: Array[String]): Unit = {
-    // this is the definition of exercise 3.1
-    
+    // this is the definition of exercise 3.1    
     val x = MyList(1,2,3,4,5) match {
       case Cons(x, Cons(2, Cons(4, _))) => x
       case Nil=>42
@@ -12,7 +11,13 @@ object ListMatch {
       case Cons(h, t) => h + sum(t)
       case _ => 101
     }
+    println("x is now %d".format(x))
 
-    println("x is now %d".format(x)) 
+    // and some tests of exercise 3.2
+    val y = MyList.tail(MyList("a", "b", "c", "d"))
+    val z = MyList.tail(MyList(1.0, 2.0, 3.5, 4.75))
+    println(y)
+    println(z)
+
   }
 }

@@ -17,5 +17,12 @@ object MyList {
     ints match {
       case Nil=>0
       case Cons(x,xs) => x + sum(xs)
-  }
+    }
+
+  // exercise 3.2
+  def tail[L](list: MyList[L]): MyList[L] =
+    list match {
+      case Nil => Nil
+      case Cons(_, tail) => tail
+    }
 }
