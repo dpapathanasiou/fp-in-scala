@@ -32,4 +32,13 @@ object MyList {
       case Nil => Nil
       case Cons(_, t) => Cons(a, t)
     }
+
+  // exercise 3.4
+  def drop[L](list: MyList[L], n: Int): MyList[L] =
+    if( 0 == n)
+      list
+    else list match {
+      case Nil => Nil
+      case Cons(_, t) => drop(t, n-1)
+    }
 }

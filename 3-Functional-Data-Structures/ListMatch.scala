@@ -26,5 +26,9 @@ object ListMatch {
     val b = MyList.setHead(99.5, doubleList)
     println(a)
     println(b)
+
+    // exercise 3.4
+    val c = MyList.drop(stringList, 2)
+    println(c)
   }
 }
