@@ -62,4 +62,15 @@ object MyList {
       case Nil => x
       case Cons(head, tail) => fun(head, foldRight(tail, x)(fun))
     }
+
+  // exercise 3.7
+  // product() using foldRight()
+  def product(numbers: MyList[Double]) =
+    foldRight(numbers, 1.0)((x,y) => x * y)
+
+  /* product() terminating early?
+     no, b/c to quote the book:
+     "foldRight must traverse all the way to the end of the list (pushing framesonto the call stack as it goes) before it can begin collapsing it."
+  */
+
 }
