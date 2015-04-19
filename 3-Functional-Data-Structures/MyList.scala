@@ -76,5 +76,22 @@ object MyList {
   // exercise 3.9
   def length[L](list: MyList[L]): Int =
     foldRight(list, 0)((_,len) => 1+len)
-  
+
+  // exercise 3.10
+  def foldLeft[L,X](list: MyList[L], x: X)(fun: (X, L) => X): X =
+    list match {
+      case Nil => x
+      case Cons(head, tail) => foldLeft(tail, fun(x, head))(fun)
+    }
+
+  // exercise 3.11
+  def sumLeft (numbers: MyList[Int]) =
+    foldLeft(numbers, 0)(_ + _)
+
+  def prodLeft(numbers: MyList[Double]) =
+    foldLeft(numbers, 1.0)(_ * _)
+
+  def lenLeft[L](list: MyList[L]): Int =
+    foldLeft(list, 0)((len, _) => 1+len)
+
 }

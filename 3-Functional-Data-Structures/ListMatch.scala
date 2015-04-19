@@ -46,5 +46,10 @@ object ListMatch {
     // exercise 3.9
     val g = MyList.length(stringList)
     println(g)
+
+    // exercise 3.11
+    println( MyList.sumLeft(MyList(1,2,3)) )
+    println( MyList.prodLeft(b) )
+    println( MyList.lenLeft(stringList) )
   }
 }
