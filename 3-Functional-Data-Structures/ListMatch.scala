@@ -34,5 +34,9 @@ object ListMatch {
     // exercise 3.5
     val d = MyList.dropWhile(b, (l: Double) => (l > 10.0))
     println(d)
+
+    // exercise 3.6
+    val e = MyList.init(doubleList)
+    println(e)
   }
 }

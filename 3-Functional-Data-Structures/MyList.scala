@@ -48,4 +48,12 @@ object MyList {
       case Cons(head, tail) if fun(head) => dropWhile(tail, fun)
       case _ => list
     }
+
+  // exercise 3.6
+  def init[L](list: MyList[L]): MyList[L] =
+    list match {
+      case Nil => Nil
+      case Cons(_, Nil) => Nil
+      case Cons(head, tail) => Cons(head, init(tail))
+    }
 }
