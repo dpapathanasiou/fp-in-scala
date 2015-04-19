@@ -38,5 +38,13 @@ object ListMatch {
     // exercise 3.6
     val e = MyList.init(doubleList)
     println(e)
+
+    // exercise 3.8
+    val f = MyList.foldRight(MyList(1,2,3), Nil: MyList[Int])(Cons(_, _))
+    println(f)
+
+    // exercise 3.9
+    val g = MyList.length(stringList)
+    println(g)
   }
 }

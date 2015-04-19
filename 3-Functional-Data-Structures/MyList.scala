@@ -73,4 +73,8 @@ object MyList {
      "foldRight must traverse all the way to the end of the list (pushing framesonto the call stack as it goes) before it can begin collapsing it."
   */
 
+  // exercise 3.9
+  def length[L](list: MyList[L]): Int =
+    foldRight(list, 0)((_,len) => 1+len)
+  
 }
