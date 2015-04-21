@@ -51,5 +51,11 @@ object ListMatch {
     println( MyList.sumLeft(MyList(1,2,3)) )
     println( MyList.prodLeft(b) )
     println( MyList.lenLeft(stringList) )
+
+    // exercise 3.12
+    println( MyList.revFold(MyList(1,2,3)) )
+
+    // exercise 3.14
+    println( MyList.append(MyList(1,2,3), MyList(4,5,6)) )
   }
 }

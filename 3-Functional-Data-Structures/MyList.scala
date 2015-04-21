@@ -94,4 +94,12 @@ object MyList {
   def lenLeft[L](list: MyList[L]): Int =
     foldLeft(list, 0)((len, _) => 1+len)
 
+  // exercise 3.12
+  def revFold[L](list: MyList[L]): MyList[L] =
+    foldLeft(list, MyList[L]())((acc, head) => Cons(head, acc))
+
+  // exercise 3.14
+  def append[L, X](list: MyList[L], x: MyList[L]): MyList[L] =
+    foldRight(list, x)(Cons(_, _))
 }
+
